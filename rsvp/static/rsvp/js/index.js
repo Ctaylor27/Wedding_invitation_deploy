@@ -33,7 +33,6 @@
          // let confirm = window.confirm("Are you sure?")
          let csrfToken = document.querySelector('input[name="csrfmiddlewaretoken"]').value;
 
-         console.log(csrfToken)
          let url = `del/${e.target.id}`
          let options = {
              method : "DELETE",
@@ -53,6 +52,5 @@
              console.error('Fetch error:', error);
          });
 
-         console.log(e.target.id)
      })
  })

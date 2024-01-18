@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from django.http import HttpResponseRedirect, HttpResponse
+from django.http import HttpResponseRedirect, HttpResponse, HttpResponseForbidden
+from django.views.decorators.http import require_POST
 from django.urls import reverse
 from .models import RSVP, Attendee
 from django.db import transaction
@@ -17,6 +18,7 @@ def landing(request):
 def RSVPView(request):
     return render(request, 'rsvp/rsvp_form.html')
 
+# @require_POST
 def submit_rsvp(request):
     if request.method == "POST":
         
@@ -33,26 +35,34 @@ def submit_rsvp(request):
 
         return HttpResponseRedirect(reverse("rsvp:landing"))
     
-def delete(request, id):
-    try:
-        with transaction.atomic():
-            entry = RSVP.objects.get(id=id)
-            attendees = Attendee.objects.filter(rsvp=entry)
-            
-            for attendee in attendees:
-                attendee.delete()
-            
-            entry.delete()
-        
-        # If the transaction is successful, return a success response
-        return HttpResponse(status=200)
+    forbidden_message = "Forbidden: POST method required. Click <a href='/landing'>here</a> to go back."
+    return HttpResponseForbidden(forbidden_message)
     
-    except RSVP.DoesNotExist:
-        # Handle the case where the entry does not exist
-        return HttpResponse("RSVP not found in DB", status=404)
-    except Exception as e:
-        # Handle other exceptions
-        print(e)
-        return HttpResponse(f"An error occurred: {str(e)}", status=500)
+def delete(request, id):
+    if request.method == "DELETE":
+        try:
+            with transaction.atomic():
+                entry = RSVP.objects.get(id=id)
+                attendees = Attendee.objects.filter(rsvp=entry)
+                
+                for attendee in attendees:
+                    attendee.delete()
+                
+                entry.delete()
+            
+            # If the transaction is successful, return a success response
+            return HttpResponse(status=200)
+    
+
+        except RSVP.DoesNotExist:
+            # Handle the case where the entry does not exist
+            return HttpResponse("RSVP not found in DB", status=404)
+        except Exception as e:
+            # Handle other exceptions
+            print(e)
+            return HttpResponse(f"An error occurred: {str(e)}", status=500)
+        
+    forbidden_message = "Forbidden: POST method required. Click <a href='/landing'>here</a> to go back."
+    return HttpResponseForbidden(forbidden_message)
 
     
