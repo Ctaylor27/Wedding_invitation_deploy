@@ -1,0 +1,215 @@
+/* styles.css */
+
+/* hex codes
+peach : #ffbf90
+rgba(255, 191, 144, 0.8)
+
+navy : #060644
+rgba(6, 6, 68, 0.8)
+
+
+lightblue : #add8e6 
+rgba(255, 191, 144, 0.8)
+*/
+
+body {
+    /* font-family: 'Parisienne', cursive; */
+    font-family: 'Arial', sans-serif;
+    letter-spacing: 0;
+    background-color: #001F3F;
+    background-image: url('../images/Wedding\ Background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 31, 63, 0.936); 
+    z-index: -1;
+}
+
+
+
+.frame {
+
+    margin: 1rem;
+    border: 1px solid rgba(253, 169, 141, 0.8);
+    background-color: rgba(253, 169, 141, 0.8);
+    border-radius: 3%;
+    width: 50vw;
+    min-width: 20rem;
+    justify-self: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+
+}
+
+form {
+    align-self: center;
+    width: 95%;
+    
+    
+}
+
+.form_items {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 90%;
+}
+
+label {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, .3);
+
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.landing {
+    text-align: center;
+
+}
+
+.photo_quote {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 1rem;
+}
+
+.landing_photo {
+    width: 50%;
+
+    border : 2px solid rgba(0, 31, 63, 0.9);
+    border-radius: 10%;
+}
+
+h2 {
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, .3);
+}
+
+.text-body {
+    width: 90%;
+    
+}
+
+.text-body p {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, .3);
+
+}
+
+#rsvp_link {
+    transition: all .25s;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, .3);
+
+}
+#rsvp_link:hover {
+    color: #add8e6;
+}
+h1 {
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, .3);
+
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.attendee_container {
+    width: 100%;
+}
+
+.input {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+label {
+    display: block;
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+input[type="text"], input[type="email"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px;
+    background-color: #add8e6; /* Adjust color as needed */
+    color: #fff;
+    border: 1px solid rgba(253, 169, 141, 0.8);
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: all .25s;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3)
+}
+
+button:hover {
+    background-color: #001F3F;
+}
+
+.input:nth-child(3) {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#num_attendees {
+    width: 100%;
+}
+
+
+.attendee_input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    width : 100%;
+}
+
+input[type="text"] {
+    flex: 1;
+    margin-right: 10px;
+}
+
+#submit {
+    background-color: #001F3F;
+    align-self: center;
+    width: 100%;
+    transition: all .25s;
+
+}
+#submit:hover{
+    background-color: #add8e6;
+}
+
+

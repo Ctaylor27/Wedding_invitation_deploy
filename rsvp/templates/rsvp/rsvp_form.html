@@ -1,0 +1,39 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'rsvp/css/styles.css' %}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+
+    
+    <div class="frame">
+        <h2>RSVP</h2>
+        <form action="{% url 'rsvp:submit_rsvp' %}" method="post">
+            {% csrf_token %}
+
+                <div class="form_items">
+                    <div class="input">
+                        <label for="name">Your Name</label>
+                        <input required type="text" name="name" id="name">
+                    </div>
+                    <div class="input">
+                        <label for="email">Email Address</label>
+                        <input required type="email" name="email" id="email">
+                    </div>
+                    <div class="attendee_container"></div>
+                    <div class="input">
+                        <button type="button" onclick="renderAttendeeInputs()" name="num_attendees" id="num_attendees">Add Guest</button>
+                    </div>
+                    
+                    <input type="hidden" name="num_attendees" id="hidden_num_attendees" value="0">
+                    <button id="submit" type="submit">Submit</button>
+                </div>
+
+        </form>
+    </div>
+
+    <script src="{% static 'rsvp/js/rsvp_form.js' %}"></script>
+
+{% endblock content %}

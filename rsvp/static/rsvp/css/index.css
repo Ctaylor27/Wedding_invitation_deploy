@@ -1,0 +1,32 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th {
+    border: 1px solid #ddd;
+
+    text-align: left;
+    background-color: #f2f2f2;
+
+
+}
+
+th, td {
+    width: 15px;
+    padding: 4px;
+}
+
+th:first-of-type {
+    width: 25%;
+}
+
+
+
+.attendees {
+    background-color: #f3f1f1;
+}
+.attendees td {
+    padding: 0.5rem; /* Adjust padding as needed */
+    text-align: left;
+}

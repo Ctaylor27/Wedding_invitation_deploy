@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'rsvp/css/styles.css' %}">
+<div class="frame landing">
+    <h1>You are formally invited!</h1>
+
+        <div class="photo_quote">
+            <img class="landing_photo" src="{% static 'rsvp/images/wedding_photo.png' %}" alt="Wedding Photo">    
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio possimus dolores ullam perspiciatis eius nesciunt sapiente, dicta hic. Dignissimos atque aut mollitia non error molestiae.</p>
+        </div>
+        <div class="text-body">
+
+
+    <hr>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid neque possimus veniam reiciendis ab aspernatur consectetur laudantium delectus quod culpa laborum nam exercitationem impedit, dolorem qui, architecto distinctio corporis fugit? Perspiciatis nihil nam corrupti eveniet magnam asperiores? Vel reiciendis magnam repudiandae rem doloribus debitis incidunt recusandae quibusdam. Amet, sunt at!</p>
+    <hr>
+    <a href="{% url 'rsvp:rsvp_form' %}">
+        <h3 id="rsvp_link">Click here to RSVP for our event!</h3>
+    </a>
+
+</div>
+{% endblock content %}

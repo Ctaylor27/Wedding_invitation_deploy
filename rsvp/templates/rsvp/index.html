@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+{% csrf_token %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'rsvp/css/index.css' %}">
+    <div class="stats">
+
+        <table>
+            <thead>
+                <tr>
+                    <th>RSVP total count</th>
+                    <th>Guest count</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{rsvp_count}}</td>
+                    <td>{{guest_count}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Party Total</th>
+                    <th>Email</th>
+                    <th><button class="toggleAllButton" type="button">Show All</button></th>
+                    <th>Delete</th>
+                    <!-- <th></th> -->
+                    <!-- <th></th>  -->
+                </tr>
+            </thead>
+            <tbody>
+                {% for rsvp in rsvps %}
+                    <tr>
+                        <td>{{rsvp.name}}</td>
+                        <td>{{rsvp.party_total}}</td>
+                        <td>{{rsvp.email}}</td>
+                        <td><button class="toggleButton" type="button">Show Party</button></td>
+                        <td><button id="{{rsvp.id}}" class="deleteButton" type="button">Delete Party</button></td>
+                    </tr>
+                    <tr class="attendees" style="display : none">
+                        <td>
+                        {% for attendee in rsvp.attendees.all %}
+                            <p>{{attendee}}</p>   
+                        {% endfor %}
+                    </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+     
+
+
+    
+        <input type="hidden" name="csrfmiddlewaretoken" value="your_csrf_token_value">
+
+
+        <script src="{% static 'rsvp/js/index.js' %}"></script>
+        
+{% endblock %}
+
