@@ -7,7 +7,6 @@ function handleKeyDown(event){
 }
 function renderAttendeeInputs(){
     num_attendees++
-    console.log(num_attendees)
     const container = document.querySelector('.attendee_container')
     document.querySelector("#hidden_num_attendees").value = num_attendees
     // Create and append a new input
@@ -25,7 +24,6 @@ function renderAttendeeInputs(){
         button.innerHTML = 'Delete'
         button.onclick = (e) => {
             num_attendees--
-            console.log(num_attendees)
             document.querySelector("#hidden_num_attendees").value = num_attendees
             div.remove()
         }
