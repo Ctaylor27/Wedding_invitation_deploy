@@ -16,6 +16,10 @@
             <a href="{% url 'rsvp:rsvp_form' %}">Go to rsvp form!</a>
             <a href="{% url 'rsvp:landing' %}">Go to landing page!</a>
         </nav>
+
+        {% if message %}
+        {{ message }}
+        {% endif %}
         
         <main>
             {% block content %}{% endblock %}

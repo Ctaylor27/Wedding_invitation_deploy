@@ -1,16 +1,33 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect, HttpResponse, HttpResponseForbidden
-from django.views.decorators.http import require_POST
+from django.contrib.auth import authenticate, login
 from django.urls import reverse
 from .models import RSVP, Attendee
 from django.db import transaction
 # Create your views here.
 
 def index(request):
-    rsvps = RSVP.objects.all()
-    guests = Attendee.objects.all()
-    context = { 'rsvps': rsvps, 'rsvp_count' : rsvps.count(), 'guest_count' : guests.count()}
-    return render(request, 'rsvp/index.html', context)
+    # Check if the user is logged in
+    if request.user.is_authenticated:
+        rsvps = RSVP.objects.all()
+        guests = Attendee.objects.all()
+        context = { 'rsvps': rsvps, 'rsvp_count' : rsvps.count(), 'guest_count' : guests.count()}
+        return render(request, 'rsvp/index.html', context)
+    else:
+        return render(request, 'rsvp/login.html', {'message': 'You must log in to view the guest list.'})
+
+def login_user(request):
+    if request.method == "POST":
+        username = request.POST["username"]
+        password = request.POST["password"]
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return HttpResponseRedirect(reverse("rsvp:index"))
+            ...
+        else:
+            return render(request, 'rsvp/login.html', {'message': "invalid user"})
+    return render(request, 'rsvp/login.html', {})
 
 def landing(request):
     return render(request, 'rsvp/landing.html')
@@ -18,7 +35,7 @@ def landing(request):
 def RSVPView(request):
     return render(request, 'rsvp/rsvp_form.html')
 
-# @require_POST
+
 def submit_rsvp(request):
     if request.method == "POST":
         
