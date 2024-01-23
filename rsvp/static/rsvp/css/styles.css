@@ -29,6 +29,7 @@ body {
     align-items: center;
     justify-content: center;
     position: relative;
+    font-family:Georgia, 'Times New Roman', Times, serif
 }
 body::before {
     content: "";
@@ -45,9 +46,9 @@ body::before {
 
 .frame {
 
-    margin: 1rem;
+
     border: 1px solid rgba(253, 169, 141, 0.8);
-    background-color: rgba(253, 169, 141, 0.8);
+    background-color: rgba(253, 169, 141, 0.814);
     border-radius: 3%;
     width: 50vw;
     min-width: 20rem;
@@ -91,12 +92,34 @@ a {
 }
 
 .photo_quote {
+    position: relative;
+    top: 0;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, .3);
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin: 0 1rem;
+    justify-content: center;
 }
 
+.photo_quote::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url('../images/lake.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-position-y: -10%;
+    filter: grayscale(1);
+    z-index: 0; /* Ensure the pseudo-element is behind the content */
+}
+.photo_quote * {
+    /* Styles for the content, including keeping it in color */
+    filter: grayscale(0%);
+    z-index: 1;
+}
 .landing_photo {
     width: 50%;
 
@@ -212,4 +235,29 @@ input[type="text"] {
     background-color: #add8e6;
 }
 
+@media only screen and (max-width: 767px) {
+    .frame {
+        margin: 0;
+        width: 100vw;
+        padding: 0;
+        position: relative;
+        border: none;
+        /* background-color: #001F3F; */
+        background-color: #f7f7f7;
+        color: #001f3f;
+    }
+    
+   
+    .photo_quote {
+        height: 100vh;
+    }
+    
+    .photo_quote::before {
+        background-position-x: 40%;
+    }
 
+    #rsvp_link {
+        color:rgba(0, 31, 63, 0.936);
+    }
+
+  }

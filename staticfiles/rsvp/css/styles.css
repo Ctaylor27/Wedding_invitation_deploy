@@ -29,6 +29,7 @@ body {
     align-items: center;
     justify-content: center;
     position: relative;
+    font-family:Georgia, 'Times New Roman', Times, serif
 }
 body::before {
     content: "";
@@ -212,4 +213,31 @@ input[type="text"] {
     background-color: #add8e6;
 }
 
-
+@media only screen and (max-width: 767px) {
+    .frame {
+        margin: 0;
+        width: 100vw;
+        padding: 0;
+        position: relative;
+        border: none;
+        /* background-color: #001F3F; */
+        background-color: #f7f7f7;
+        color: #001f3f;
+    }
+    .frame h1 {
+        color: white;
+    }
+    .photo_quote {
+        position: relative;
+        top:0; 
+        height: 65vh;
+        width: 100vw;
+        background-image: url('../images/wedding_photo.png');
+        background-size: cover;
+        background-position: center;
+        background-position-y: -10%;
+        filter: grayscale(1);
+        margin: 0;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, .3);
+    }
+  }
