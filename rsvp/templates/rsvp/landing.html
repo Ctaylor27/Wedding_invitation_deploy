@@ -7,21 +7,44 @@
 <div class="frame landing">
     
     <div class="photo_quote">
-            <img src="{% static 'rsvp/images/wlogo.png' %}" />
-            
-            {% comment %} <img class="landing_photo" src="{% static 'rsvp/images/wedding_photo.png' %}" alt="Wedding Photo">     {% endcomment %}
+            <!-- <img class="wlogo" src="{% static 'rsvp/images/wlogo.png' %}" /> -->
+            <div class="landing-logo">
+                <h2>A & C</h2>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="#ffffff" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
+            </div>
     </div>
     <div class="text-body">
-        <h1>You are formally invited</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio possimus dolores ullam perspiciatis eius nesciunt sapiente, dicta hic. Dignissimos atque aut mollitia non error molestiae.</p>
+        <h2>You are formally invited to the wedding of </h2>
+        <h1 id="our_names">Alyssa<br>+<br>Caleb</h1>
 
+        <div class="landing-section">
+            <img src="{% static 'rsvp/images/ceremony.jpg' %}" alt="" srcset="">
+        </div>
 
-        <hr>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid neque possimus veniam reiciendis ab aspernatur consectetur laudantium delectus quod culpa laborum nam exercitationem impedit, dolorem qui, architecto distinctio corporis fugit? Perspiciatis nihil nam corrupti eveniet magnam asperiores? Vel reiciendis magnam repudiandae rem doloribus debitis incidunt recusandae quibusdam. Amet, sunt at!</p>
-        <hr>
-        <a href="{% url 'rsvp:rsvp_form' %}">
-            <h3 id="rsvp_link">Click here to RSVP for our event!</h3>
-        </a>
+        <div class="landing-section">
+            <p>June 8th, 2024</p>
+            <p>5:00 p.m.</p>
+            <p>The Barn at Payton's Place</p>
+            <p>1820 Oak Grove Rd, Van Buren, AR 72956</p>
+        </div>
+        <div class="landing-section">
+            <img src="{% static 'rsvp/images/beer.jpg' %}" alt="" srcset="">
+        </div>
+        <div class="landing-section">
+            <p>We are very excited for you to join us for our wedding. This very special day has been a long time in the making. One text turned into our first date at Sakura and Great Escape. That date turned into more dates and it began to feel like something special. We met the others families, continued to grow close, and began imagining what our lives could look like together. Fast forward four years and we are anticipating our wedding day. We hope you will attend this ceremony and experience this milestone with us.</p>
+        </div>
+        <div class="landing-section">
+            <img src="{% static 'rsvp/images/beach.jpg' %}" alt="" srcset="">
+        </div>
+        <div class="landing-section">
+            <a href="{% url 'rsvp:rsvp_form' %}">
+                <h3 id="rsvp_link">Click here to RSVP for our event!</h3>
+            </a>
+        </div>
+
+        <div id="registry" class="landing-section">
+            <a href="#"><p>For information about our registry, please click here.</p></a>
+        </div>
     </div>
 </div>
 {% endblock content %}

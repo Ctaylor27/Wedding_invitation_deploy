@@ -35,7 +35,6 @@ def landing(request):
 def RSVPView(request):
     return render(request, 'rsvp/rsvp_form.html')
 
-
 def submit_rsvp(request):
     if request.method == "POST":
         
