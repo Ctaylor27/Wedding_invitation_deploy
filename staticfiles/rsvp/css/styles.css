@@ -12,15 +12,19 @@ lightblue : #add8e6
 rgba(255, 191, 144, 0.8)
 */
 
+:root {
+    scroll-behavior: smooth;
+}
+
 body {
     /* font-family: 'Parisienne', cursive; */
     font-family: 'Arial', sans-serif;
     letter-spacing: 0;
     background-color: #001F3F;
-    background-image: url('../images/Wedding\ Background.png');
+    /* background-image: url('../images/Wedding\ Background.png');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
     margin: 0;
     padding: 0;
     color: white;
@@ -29,9 +33,10 @@ body {
     align-items: center;
     justify-content: center;
     position: relative;
-    font-family:Georgia, 'Times New Roman', Times, serif
+    font-family:Georgia, 'Times New Roman', Times, serif;
+
 }
-body::before {
+/* body::before {
     content: "";
     position: absolute;
     top: 0;
@@ -39,28 +44,34 @@ body::before {
     bottom: 0;
     left: 0;
     background-color: rgba(0, 31, 63, 0.936); 
-    z-index: -1;
-}
+    z-index: -1; */
+/* } */
 
 
 
 .frame {
 
-    margin: 1rem;
-    border: 1px solid rgba(253, 169, 141, 0.8);
-    background-color: rgba(253, 169, 141, 0.8);
-    border-radius: 3%;
-    width: 50vw;
-    min-width: 20rem;
-    justify-self: center;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    padding: 1rem;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 
+    /* outline: 1px solid rgba(253, 169, 141, 0.8); */
+    background-color: #f7f7f7;
+    color: #001f3f;
+    background-image: url('../images/invbackground.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: 50%;
+    background-position-y: 55%; 
+    width: 100vw;
+    min-width: 20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    position: relative;
 }
+
+
+
 
 form {
     align-self: center;
@@ -82,7 +93,7 @@ label {
 }
 
 a {
-    color: white;
+    color: #001F3F;
     text-decoration: none;
 }
 
@@ -91,19 +102,18 @@ a {
 
 }
 
-.photo_quote {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin: 0 1rem;
+#our_names {
+    transform: rotate(-10deg);
+    font-family: 'Great Vibes', cursive;
+}
+hr {
+    color: #001F3F;
+}
+#rsvp_link {
+    color:rgba(0, 31, 63, 0.936);
+
 }
 
-.landing_photo {
-    width: 50%;
-
-    border : 2px solid rgba(0, 31, 63, 0.9);
-    border-radius: 10%;
-}
 
 h2 {
     margin-bottom: 1rem;
@@ -111,27 +121,32 @@ h2 {
 }
 
 .text-body {
-    width: 90%;
+    width: 80%;
+    margin: 1rem 0;
     
 }
 
 .text-body p {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, .3);
+    font-size: 1.5rem;
 
 }
 
 #rsvp_link {
     transition: all .25s;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, .3);
+    font-size: 2rem;
 
+    color:rgba(0, 31, 63, 0.936);
 }
-#rsvp_link:hover {
+
+#rsvp_link:hover, #registry {
     color: #add8e6;
 }
 h1 {
     text-align: center;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, .3);
-
+    font-size: 3rem;
 }
 
 form {
@@ -213,31 +228,112 @@ input[type="text"] {
     background-color: #add8e6;
 }
 
-@media only screen and (max-width: 767px) {
+.landing-section {
+    padding: 1rem 0;
+   }
+
+
+.photo_quote {
+    background-image: url("../images/hero.JPG");
+    height: 100vh;
+    width: 100vw;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    filter: grayscale(1);
+}
+
+
+.photo_quote .landing-logo {
+    position: absolute;
+    bottom: 50px;
+    
+}
+
+.photo_quote * h2 {
+    color: white;
+    font-size: 5rem;
+    font-family: 'Tangerine', cursive;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, .9);
+    text-align: center;
+}
+#text-body {
+    width: 50vw;
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: space-evenly;
+}
+
+#text-body .heading {
+    margin-top: 1rem;
+}
+
+.landing-section {
+    width: 300px;
+}
+
+.landing-section img {
+    width: 300px;
+}
+
+#text-body .landing-section p {
+    font-size: 1.5rem;
+}
+
+
+
+#our_names {
+    transform: rotate(-10deg);
+    font-family: 'Tangerine', cursive;
+    font-size: 5rem;
+}
+hr {
+    color: #001F3F;
+}
+
+
+@media only screen and (max-width: 900px) {
+    body {
+        width: 100vw;
+        -ms-overflow-style: none; /* for Internet Explorer, Edge */
+        scrollbar-width: none; /* for Firefox */
+        overflow-y: scroll;
+    }
     .frame {
         margin: 0;
         width: 100vw;
         padding: 0;
         position: relative;
         border: none;
-        /* background-color: #001F3F; */
         background-color: #f7f7f7;
-        color: #001f3f;
-    }
-    .frame h1 {
-        color: white;
-    }
-    .photo_quote {
-        position: relative;
-        top:0; 
-        height: 65vh;
-        width: 100vw;
-        background-image: url('../images/wedding_photo.png');
+        background-image: url('../images/invbackground.png');
         background-size: cover;
-        background-position: center;
-        background-position-y: -10%;
-        filter: grayscale(1);
-        margin: 0;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, .3);
+        background-repeat: no-repeat;
+        background-position-x: 50%;
+        background-position-y: 55%; 
+        color: #001f3f;
+
     }
-  }
+    a {
+        color: #001F3F;
+    }
+    #text-body {
+        width: 100vw;
+    }
+    
+    
+   .photo_quote {
+        background-size: cover;
+   }
+
+   .landing-section img {
+    width: 100%;
+}
+
+}
