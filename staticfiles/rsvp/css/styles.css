@@ -312,7 +312,7 @@ hr {
         position: relative;
         border: none;
         background-color: #f7f7f7;
-        background-image: url('../images/invbackground.png');
+        background-image: url('/static/images/invbackground.png');
         background-size: cover;
         background-repeat: no-repeat;
         background-position-x: 50%;
