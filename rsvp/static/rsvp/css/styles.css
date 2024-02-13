@@ -234,7 +234,7 @@ input[type="text"] {
 
 
 .photo_quote {
-    background-image: url("static/images/hero.jpg");
+    background-image: url("../images/hero.jpg");
     height: 100vh;
     width: 100vw;
     background-size: contain;
