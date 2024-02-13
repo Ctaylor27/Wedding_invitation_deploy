@@ -16,6 +16,10 @@ rgba(255, 191, 144, 0.8)
     scroll-behavior: smooth;
 }
 
+main {
+    width: 100%;
+}
+
 body {
     /* font-family: 'Parisienne', cursive; */
     font-family: 'Arial', sans-serif;
@@ -300,25 +304,26 @@ hr {
 
 @media only screen and (max-width: 900px) {
     body {
-        width: 100vw;
+        margin: 0;
+        padding: 0;
+        width: 100%;
         -ms-overflow-style: none; /* for Internet Explorer, Edge */
         scrollbar-width: none; /* for Firefox */
-        overflow-y: scroll;
+        overflow-x: hidden;
+        
+        box-sizing: border-box;
+
     }
     .frame {
         margin: 0;
-        width: 100vw;
+        width: 100%;
         padding: 0;
         position: relative;
         border: none;
         background-color: #f7f7f7;
-        background-image: url('/static/images/invbackground.png');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position-x: 50%;
-        background-position-y: 55%; 
+        background-size: repeat;
         color: #001f3f;
-
+        box-sizing: border-box;
     }
     a {
         color: #001F3F;

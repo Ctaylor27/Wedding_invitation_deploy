@@ -1,3 +1,4 @@
+{% load static %}
 <html>
     <head>
         <meta charset="utf-8">
@@ -7,6 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" type="text/css" href="{% static 'rsvp/css/styles.css' %}">
+
         <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Tangerine&display=swap" rel="stylesheet">
@@ -24,14 +27,11 @@
         {{ message }}
         {% endif %}
         
-        <main>
-            {% block content %}{% endblock %}
-        </main>
+
+        {% block content %}{% endblock %}
+
     
-        <footer>
-            <!-- Your site's footer content -->
-            <p>&copy; 2023 Your Wedding</p>
-        </footer>
+        
     </body>
 </html>
 
