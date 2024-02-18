@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+
+    <div class="frame landing">
+        <form action="{% url 'rsvp:create' %}" method="POST">
+            {% csrf_token %}
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password">
+            <label for="key">Key</label>
+            <input type="key" name="key" id="key">
+            <button type="submit">Create User</button>
+        </form>
+    </div>
+
+
+{% endblock content %}

@@ -24,7 +24,6 @@ body {
     /* font-family: 'Parisienne', cursive; */
     font-family: 'Arial', sans-serif;
     letter-spacing: 0;
-    background-color: #001F3F;
     /* background-image: url('../images/Wedding\ Background.png');
     background-size: cover;
     background-position: center;
@@ -36,8 +35,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: relative;
-    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 
 }
 /* body::before {
@@ -64,7 +62,7 @@ body {
     background-repeat: no-repeat;
     background-position-x: 50%;
     background-position-y: 55%; 
-    width: 100vw;
+    width: 100%;
     min-width: 20rem;
     display: flex;
     flex-direction: column;
@@ -307,9 +305,6 @@ hr {
         margin: 0;
         padding: 0;
         width: 100%;
-        -ms-overflow-style: none; /* for Internet Explorer, Edge */
-        scrollbar-width: none; /* for Firefox */
-        overflow-x: hidden;
         
         box-sizing: border-box;
 
@@ -324,6 +319,7 @@ hr {
         background-size: repeat;
         color: #001f3f;
         box-sizing: border-box;
+        overflow: hidden;
     }
     a {
         color: #001F3F;

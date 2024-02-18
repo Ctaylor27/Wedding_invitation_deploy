@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect, HttpResponse, HttpResponseForbidden
 from django.contrib.auth import authenticate, login
+from django.contrib.auth.models import User
 from django.urls import reverse
 from .models import RSVP, Attendee
 from django.db import transaction
@@ -15,6 +16,19 @@ def index(request):
         return render(request, 'rsvp/index.html', context)
     else:
         return render(request, 'rsvp/login.html', {'message': 'You must log in to view the guest list.'})
+    
+def create_user(request):
+    if request.method == "POST":
+
+        if (request.POST['key'] == "10301998"):
+            user = User.objects.create_user(request.POST['username'], email=None, password=request.POST['password'])
+            user.save()
+            print("User Saved")
+            return render(request, 'rsvp/login.html', {})
+        
+        else: return render(request, 'rsvp/create.html', {'message': "invalid key"})
+
+    return render(request,'rsvp/create.html', {})
 
 def login_user(request):
     if request.method == "POST":
@@ -27,7 +41,7 @@ def login_user(request):
             ...
         else:
             return render(request, 'rsvp/login.html', {'message': "invalid user"})
-    return render(request, 'rsvp/login.html', {})
+    return render(request, 'rsvp/login.html', {'message': "error"})
 
 def landing(request):
     return render(request, 'rsvp/landing.html')
@@ -42,7 +56,7 @@ def submit_rsvp(request):
         attendees = [request.POST.get(f'attendee_{i}') for i in range(1, int(request.POST.get('num_attendees', 0)) + 1)]
 
         # Create the RSVP based on the name and num_attendees provided
-        rsvp = RSVP(name=request.POST['name'], party_total=request.POST['num_attendees'], email=request.POST['email'])
+        rsvp = RSVP(name=request.POST['name'], party_total=request.POST['num_attendees'])
         rsvp.save()
         # Creat an Attendee for each and attach them to the RSVP
         for attendee in attendees:
