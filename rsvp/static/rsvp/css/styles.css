@@ -21,35 +21,16 @@ main {
 }
 
 body {
-    /* font-family: 'Parisienne', cursive; */
-    font-family: 'Arial', sans-serif;
     letter-spacing: 0;
-    /* background-image: url('../images/Wedding\ Background.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat; */
     margin: 0;
     padding: 0;
-    color: white;
+    color: #001f3f;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
-
 }
-/* body::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(0, 31, 63, 0.936); 
-    z-index: -1; */
-/* } */
-
-
 
 .frame {
 
@@ -123,7 +104,7 @@ h2 {
 }
 
 .text-body {
-    width: 80%;
+    width: 90%;
     margin: 1rem 0;
     
 }
@@ -159,6 +140,18 @@ form {
 
 .attendee_container {
     width: 100%;
+}
+
+#timeline {
+    margin-top: 1rem;
+}
+
+#text-body #timeline p  {
+    font-size: 15px;
+}
+
+#text-body #timeline .event {
+    /* text-align: left; */
 }
 
 .input {
