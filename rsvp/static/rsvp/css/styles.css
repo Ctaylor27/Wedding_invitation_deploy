@@ -57,10 +57,10 @@ body {
 
 
 form {
-    align-self: center;
-    width: 95%;
-    
-    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
 }
 
 .form_items {
@@ -132,12 +132,6 @@ h1 {
     font-size: 3rem;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 .attendee_container {
     width: 100%;
 }
@@ -150,8 +144,6 @@ form {
     font-size: 15px;
 }
 
-
-
 .input {
     margin-bottom: 15px;
     width: 100%;
@@ -159,8 +151,8 @@ form {
 
 label {
     display: block;
-    font-size: 2rem;
-    margin-bottom: 5px;
+    font-size: 1.5rem;
+    margin: 5px 0;
 }
 
 input[type="text"], input[type="email"] {
@@ -191,6 +183,18 @@ button:hover {
     display: flex;
     justify-content: center;
 }
+
+.checkbox * {
+    display: inline;
+}
+
+.checkbox input {
+    width: 1.5rem;
+    height: 1.5rem;
+    border:rgba(0, 31, 63, 0.936) 1px solid
+}
+
+
 
 #num_attendees {
     width: 100%;
@@ -258,8 +262,8 @@ input[type="text"] {
     width: 50vw;
     margin-top: 2rem;
     display: flex;
-    flex-wrap: wrap;
-
+    flex-direction: column;
+    align-items: center;
     justify-content: space-evenly;
 }
 
@@ -268,11 +272,11 @@ input[type="text"] {
 }
 
 .landing-section {
-    width: 300px;
+    width: 80%;
 }
 
 .landing-section img {
-    width: 300px;
+    width: 500px;
 }
 
 #text-body .landing-section p {
@@ -296,7 +300,7 @@ hr {
         margin: 0;
         padding: 0;
         width: 100%;
-        
+        background-color: #001f3f;
         box-sizing: border-box;
 
     }
@@ -324,8 +328,20 @@ hr {
         background-size: cover;
    }
 
+   .landing-section {
+    width: 300px;
+    }
+
+    .landing-section img {
+        width: 300px;
+    }
+
    .landing-section img {
     width: 100%;
 }
+
+    form {
+        width: 100%;
+    }
 
 }

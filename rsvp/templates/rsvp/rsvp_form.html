@@ -18,7 +18,15 @@
                         <label for="name">Your Name</label>
                         <input required type="text" name="name" id="name">
                     </div>
-                    <p>Please add any family members as a guest</p>
+                    <div class="input checkbox">
+                        <label for="is_attending">Will you be attending on June 8th, 2024?</label>
+                        <!-- <input type="checkbox"  name="is_attending" id="is_attending"> -->
+                        <input required type="radio" name="is_attending" value="True">
+                        <label for="yes">Yes</label>
+                        <input type="radio" name="is_attending" value="False">
+                        <label for="no">No</label>
+                    </div>
+                    <label>Please add any family members as a guest</label>
                     <div class="attendee_container"></div>
                     <div class="input">
                         <button type="button" onclick="renderAttendeeInputs()" name="num_attendees" id="num_attendees">Add Guest</button>
@@ -26,6 +34,8 @@
                     
                     <input type="hidden" name="num_attendees" id="hidden_num_attendees" value="0">
                     <button id="submit" type="submit">Submit</button>
+
+                    <input type="text" hidden name="validator">
                 </div>
 
         </form>

@@ -16,38 +16,21 @@ rgba(255, 191, 144, 0.8)
     scroll-behavior: smooth;
 }
 
+main {
+    width: 100%;
+}
+
 body {
-    /* font-family: 'Parisienne', cursive; */
-    font-family: 'Arial', sans-serif;
     letter-spacing: 0;
-    background-color: #001F3F;
-    /* background-image: url('../images/Wedding\ Background.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat; */
     margin: 0;
     padding: 0;
-    color: white;
+    color: #001f3f;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: relative;
-    font-family:Georgia, 'Times New Roman', Times, serif;
-
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
-/* body::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(0, 31, 63, 0.936); 
-    z-index: -1; */
-/* } */
-
-
 
 .frame {
 
@@ -60,7 +43,7 @@ body {
     background-repeat: no-repeat;
     background-position-x: 50%;
     background-position-y: 55%; 
-    width: 100vw;
+    width: 100%;
     min-width: 20rem;
     display: flex;
     flex-direction: column;
@@ -74,10 +57,10 @@ body {
 
 
 form {
-    align-self: center;
-    width: 95%;
-    
-    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
 }
 
 .form_items {
@@ -121,7 +104,7 @@ h2 {
 }
 
 .text-body {
-    width: 80%;
+    width: 90%;
     margin: 1rem 0;
     
 }
@@ -149,14 +132,16 @@ h1 {
     font-size: 3rem;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 .attendee_container {
     width: 100%;
+}
+
+#timeline {
+    margin-top: 1rem;
+}
+
+#text-body #timeline p  {
+    font-size: 15px;
 }
 
 .input {
@@ -166,8 +151,8 @@ form {
 
 label {
     display: block;
-    font-size: 2rem;
-    margin-bottom: 5px;
+    font-size: 1.5rem;
+    margin: 5px 0;
 }
 
 input[type="text"], input[type="email"] {
@@ -198,6 +183,18 @@ button:hover {
     display: flex;
     justify-content: center;
 }
+
+.checkbox * {
+    display: inline;
+}
+
+.checkbox input {
+    width: 1.5rem;
+    height: 1.5rem;
+    border:rgba(0, 31, 63, 0.936) 1px solid
+}
+
+
 
 #num_attendees {
     width: 100%;
@@ -234,7 +231,7 @@ input[type="text"] {
 
 
 .photo_quote {
-    background-image: url("../images/hero.JPG");
+    background-image: url("../images/hero.jpg");
     height: 100vh;
     width: 100vw;
     background-size: contain;
@@ -265,8 +262,8 @@ input[type="text"] {
     width: 50vw;
     margin-top: 2rem;
     display: flex;
-    flex-wrap: wrap;
-
+    flex-direction: column;
+    align-items: center;
     justify-content: space-evenly;
 }
 
@@ -275,11 +272,11 @@ input[type="text"] {
 }
 
 .landing-section {
-    width: 300px;
+    width: 80%;
 }
 
 .landing-section img {
-    width: 300px;
+    width: 500px;
 }
 
 #text-body .landing-section p {
@@ -300,25 +297,24 @@ hr {
 
 @media only screen and (max-width: 900px) {
     body {
-        width: 100vw;
-        -ms-overflow-style: none; /* for Internet Explorer, Edge */
-        scrollbar-width: none; /* for Firefox */
-        overflow-y: scroll;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        background-color: #001f3f;
+        box-sizing: border-box;
+
     }
     .frame {
         margin: 0;
-        width: 100vw;
+        width: 100%;
         padding: 0;
         position: relative;
         border: none;
         background-color: #f7f7f7;
-        background-image: url('/static/images/invbackground.png');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position-x: 50%;
-        background-position-y: 55%; 
+        background-size: repeat;
         color: #001f3f;
-
+        box-sizing: border-box;
+        overflow: hidden;
     }
     a {
         color: #001F3F;
@@ -332,8 +328,20 @@ hr {
         background-size: cover;
    }
 
+   .landing-section {
+    width: 300px;
+    }
+
+    .landing-section img {
+        width: 300px;
+    }
+
    .landing-section img {
     width: 100%;
 }
+
+    form {
+        width: 100%;
+    }
 
 }

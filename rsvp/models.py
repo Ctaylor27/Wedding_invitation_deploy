@@ -7,6 +7,7 @@ from django.core.validators import MinValueValidator
 class RSVP(models.Model):
     name = models.CharField(max_length=200)
     party_total = models.IntegerField(validators=[MinValueValidator(1)], default=1)
+    is_attending = models.BooleanField(default = True)
 
     def update_party_total(self):
         self.party_total = self.attendee_set.count() + 1

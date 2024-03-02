@@ -51,12 +51,19 @@ def RSVPView(request):
 
 def submit_rsvp(request):
     if request.method == "POST":
+
+        if request.POST['validator'] != "":
+            forbidden_message = "Forbidden: Fatal Error"
+            return HttpResponseForbidden(forbidden_message)
+
+        if request.POST.get('is_attending') == "True": attending = True
+        else: attending = False
         
         # Get the list of attendees from the POST request
         attendees = [request.POST.get(f'attendee_{i}') for i in range(1, int(request.POST.get('num_attendees', 0)) + 1)]
 
         # Create the RSVP based on the name and num_attendees provided
-        rsvp = RSVP(name=request.POST['name'], party_total=request.POST['num_attendees'])
+        rsvp = RSVP(name=request.POST['name'], party_total=request.POST['num_attendees'], is_attending = attending)
         rsvp.save()
         # Creat an Attendee for each and attach them to the RSVP
         for attendee in attendees:
